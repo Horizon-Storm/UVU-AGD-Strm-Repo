@@ -104,6 +104,18 @@ global proc float math_median(float $input[])
 
 global proc Kalkulate(string $funct, float $arry[])
 {
+    
+
+    print("You entered ");
+
+    for ($i = 0; $i < size($arry); $i++)
+    {
+        print($arry[$i] + " ");
+    }
+    
+    
+    print(" And you want me to find the " + $funct + "\n");
+
     if($funct == "sum")
     {
         print("Sum: " + math_sum($arry) + "\n");
