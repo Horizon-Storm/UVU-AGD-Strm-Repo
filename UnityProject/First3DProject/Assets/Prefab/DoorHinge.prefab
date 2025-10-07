@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 9072182517639886923}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45067, y: 2.51759, z: 2.01368}
+  m_LocalPosition: {x: 3.01, y: 2.51759, z: 2.01368}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -179,16 +179,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65180f705bb904ee98a80edc6dcf0d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameActionHandler
-  action: {fileID: 11400000, guid: 4acea9c2a93b78c4cbdedc6cac3ee6ce, type: 2}
+  action: {fileID: 11400000, guid: be655a07b3ec7ad41805ff60d89715a6, type: 2}
   startEvent:
     m_PersistentCalls:
       m_Calls: []
   respondEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9100000, guid: fc1468ed0bcb25b4eaf44d1f180004c2, type: 2}
-        m_TargetAssemblyTypeName: UnityEditor.Animations.AnimatorController, UnityEditor.CoreModule
-        m_MethodName: AddLayer
+      - m_Target: {fileID: 8002572785269803334}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
