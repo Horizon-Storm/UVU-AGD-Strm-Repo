@@ -1,0 +1,41 @@
+string $window = `window -title "ourWindow" -widthHeight 300 200`;
+gridLayout -numberOfColumns 2 - cellWidthHeight 150 50;
+
+    text -label "Number of Objects";
+    intField -minValue 0 -maxValue 100 numfield;
+    text -label "x chord:" -bgc 1 0 0;
+    floatField -minValue -1000 -maxValue 1000 xfield;
+    text -label "y chord:" -bgc 0 1 0;
+    floatField -minValue -1000 -maxValue 1000 yfield;
+    text -label "z chord:" -bgc 0 0 1;
+    floatField -minValue -1000 -maxValue 1000 zfield;
+
+    button -label "Create Objects" -command "createObjects()";
+
+showWindow $window;
+
+global proc createObjects()
+{
+    int $num = `intField -query -value numfield`;
+    float $x = `floatField -query -value xfield`;
+    float $y = `floatField -query -value yfield`;
+    float $z = `floatField -query -value zfield`;
+    string $selection[] = `ls -sl`;
+    if (size($selection) == 0)
+    {
+        error "Please select an object to duplicate";
+        return;
+    }
+    else
+    {
+        for($i = 0; $i < $num; $i++)
+        {
+            duplicate $selection[0];
+            move -r ($x) ($y) ($z) $newObj[0];
+        }
+    }
+    //need to duplicate all selections (nested for loop)
+    //use xform instead of move
+    //add option to randomize the x,y,z values
+
+}
