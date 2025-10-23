@@ -195,31 +195,39 @@ global proc Kalkulate(string $funct, float $arry[])
     
 }
 
-global proc CalcUI()
+global proc Calc()
 {
-    string $calcWindow[] = `window -title "Calculator" -widthHeight 300 200`;
+    string $calcWindow = `window -title "Calculator" -widthHeight 300 200`;
     gridLayout -numberOfColumns 2 -cellWidthHeight 150 30;
+
     text -label "Operation: ";
-    string $ op = `textField text "add" operation`;
+    textField -text "sum" operation;
 
     text -label "Numbers: ";
-    string $nums = `textField text "1,2,3" numbers`;
+    textField -text "1,2,3" numbers;
 
-    
-    button -label "Calculate" -command ("CalcButton(\'"$op""\", \'"$nums""\")");
+    button -label "Calculate" -command "CalcButton()";
     text -label "Result: " result;
+
+    text -label "Operations: ";
+
+    text -label "sum, dif, mult, div, ";
+
+    text -label " ";
+
+    text -label "power, mean, median";
 
     showWindow $calcWindow;
 
 }
 
-global proc CalcButton(string $op string $nums)
+global proc CalcButton()
 {
-    string $opfield = `textField -query -text $op`;
-    string $numfield = `textField -query -text $nums`;
+    string $opfield = `textField -query -text operation`;
+    string $numfield = `textField -query -text numbers`;
     string $strArray[] = stringToStringArray($numfield, ",");
     float $numArray[];
-    for($arg in $strArray)
+    for ($arg in $strArray)
     {
         $numArray[size($numArray)] = (float)$arg;
     }
