@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e842cc2663f46d98d43922a660ba8e, type: 3}
-  m_Name: InstBulletobj
-  m_EditorClassIdentifier: Assembly-CSharp::Instancer
-  prefab: {fileID: 1424553087102609191, guid: 4ec63a9b031278148a64fdf8b3f6f7b7, type: 3}
-  indexer: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: f97b1ffafe804442886d0b5e1a42f095, type: 3}
+  m_Name: EnemyUpdateHealth
+  m_EditorClassIdentifier: Assembly-CSharp::GameAction

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8627443285282023016}
   - component: {fileID: 6893861420739606101}
   - component: {fileID: 8665002527690018725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Damager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 4190679000551817961}
   - component: {fileID: 3903152441285752769}
   - component: {fileID: 6276849073793768249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ MonoBehaviour:
         m_MethodName: ChangeBase
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: e90ad48971c63d24ca07fd964b9e67b7, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 243787bc7ab318c4b9ad6abe5d376cc5, type: 2}
           m_ObjectArgumentAssemblyTypeName: AiBase, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
         m_MethodName: ChangeBase
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 243787bc7ab318c4b9ad6abe5d376cc5, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: e90ad48971c63d24ca07fd964b9e67b7, type: 2}
           m_ObjectArgumentAssemblyTypeName: AiBase, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
