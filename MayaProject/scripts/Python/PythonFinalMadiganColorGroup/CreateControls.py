@@ -34,17 +34,3 @@ def CreateCtrlGroup():
 CreateCtrlGroup()
 
     
-
-
-#Assignment Details:
-
-#The script should work on a user selection of any length. Each selection should be processed through a loop that does the following:
-#Create a control for each selection. The simplest control to make is a NURBS circle (found in the menu under Create > NURBS Primitives > Circle).
-#Translate and rotate each control to match the transformations of their respective selected object.
-#Create a parent group for each control also matching the transformations of the control/selected object.
-#Parent the control under its respective parent group.
-#Change the naming of the control and parent group using these parameters:
-#Each control will inherit its naming from the respective selected object but will end in "_Ctrl".
-#If the selected object already contains a suffix (such as "_Jnt" or "_Geo"), it will be removed and replaced with "_Ctrl". If the selected object does not have a suffix, then "_Ctrl" is simply appended to the control name.
-#The control parent group will end in "_Grp".
-#For example, if "L_Arm_01_Jnt" is selected, then the control will be named "L_Arm_01_Ctrl" and the group will be named "L_Arm_01_Ctrl_Grp"
