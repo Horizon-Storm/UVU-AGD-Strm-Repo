@@ -803,15 +803,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
       propertyPath: m_Size.x
-      value: 1.2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
       propertyPath: m_Size.y
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
       propertyPath: m_Size.z
-      value: 1.2
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
+      propertyPath: m_Center.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
+      propertyPath: m_Center.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7962474325290198527, guid: 88b1c9c7a4e375142808386f5e07bdbf, type: 3}
       propertyPath: m_ProvidesContacts
