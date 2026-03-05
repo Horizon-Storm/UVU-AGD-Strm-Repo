@@ -1,7 +1,11 @@
 //Maya ASCII 2025ff03 scene
-//Name: TurnAround.ma
-//Last modified: Wed, Mar 04, 2026 05:27:04 PM
+//Name: LiftTurnAround.ma
+//Last modified: Wed, Mar 04, 2026 05:26:57 PM
 //Codeset: 1252
+file -rdi 1 -ns "LiftInterior" -rfn "LiftInteriorRN" -op "v=0;" -typ "mayaAscii"
+		 "D:/Git Repository/UVU-AGD-Strm-Repo/MayaProject//assets/Sci-Fi/Props/Lifts/LiftInterior.ma";
+file -r -ns "LiftInterior" -dr 1 -rfn "LiftInteriorRN" -op "v=0;" -typ "mayaAscii"
+		 "D:/Git Repository/UVU-AGD-Strm-Repo/MayaProject//assets/Sci-Fi/Props/Lifts/LiftInterior.ma";
 requires maya "2025ff03";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
 		 -nodeType "aiAreaLight" -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.8.2";
@@ -11,7 +15,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "2DEBCBF0-40ED-64AD-B832-3A986E12738E";
+fileInfo "UUID" "E408B15B-4A95-556A-E87B-06839EA343ED";
 createNode transform -s -n "persp";
 	rename -uid "09931983-4D12-26EA-F62F-C68A0E86A1FA";
 	setAttr ".v" no;
@@ -245,21 +249,21 @@ createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	setAttr ".sc" -type "float3" 0.341874 0.48038444 0.70200002 ;
 	setAttr ".intensity" 0.20000000298023224;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "1136F2F2-4854-D50A-6012-80ACAF5253BA";
+	rename -uid "953FE56D-4B88-72DC-0D4D-70AB36A8CE75";
 	setAttr -s 20 ".lnk";
 	setAttr -s 20 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "27E6470C-41FB-5CBC-5385-C598218217E8";
-	setAttr ".bsdt[0].bscd" -type "Int32Array" 0 ;
+	rename -uid "DB03EAF5-4FA4-1817-ACEE-3484761C7D66";
+	setAttr ".bsdt[0].bscd" -type "Int32Array" 1 0 ;
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "0620ED44-4455-1CFE-8559-BB874F875D61";
+	rename -uid "686F048B-40DC-8F5F-154D-499E24566769";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "230D4713-4E27-DDF2-8982-E78062F47923";
+	rename -uid "95DC1526-4A62-F8DF-3736-04884263BEFF";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "4A8DD7B2-45E5-17CB-0407-41A17C9826CB";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "EB953BD5-411D-C6F2-05E6-6BADAB7C14B5";
+	rename -uid "88DA377B-4E59-413F-EA60-80AB31B9ED4B";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "EE3E87DD-451B-13A1-539B-B086E57DE726";
 	setAttr ".g" yes;
@@ -397,6 +401,22 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].x" 31.428571701049805;
 	setAttr ".tgi[0].ni[3].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
+createNode reference -n "LiftInteriorRN";
+	rename -uid "264273D9-4B9D-395A-B488-F0B81546C388";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"LiftInteriorRN"
+		"LiftInteriorRN" 0
+		"LiftInteriorRN" 5
+		0 "|LiftInterior:Lift" "|Spinny_Guy" "-s -r "
+		2 "|Spinny_Guy|LiftInterior:Lift" "translate" " -type \"double3\" 0 0.68530827407564487 0"
+		
+		2 "|Spinny_Guy|LiftInterior:Lift" "rotate" " -type \"double3\" 0 -2.14175751267642545 0"
+		
+		2 "|Spinny_Guy|LiftInterior:Lift" "scale" " -type \"double3\" 0.99999999999999956 1 0.99999999999999956"
+		
+		2 "|Spinny_Guy|LiftInterior:Lift" "rotatePivotTranslate" " -type \"double3\" 0 0 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -407,15 +427,20 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 20 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 7 ".s";
+	setAttr -s 20 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 12 ".u";
 select -ne :defaultRenderingList1;
+	setAttr -s 2 ".r";
 select -ne :lightList1;
 	setAttr -s 4 ".l";
+select -ne :defaultTextureList1;
+	setAttr -s 34 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -505,4 +530,4 @@ connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight3.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
-// End of TurnAround.ma
+// End of LiftTurnAround.ma
