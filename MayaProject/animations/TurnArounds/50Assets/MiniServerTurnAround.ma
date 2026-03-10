@@ -1,8 +1,12 @@
 //Maya ASCII 2025ff03 scene
-//Name: TurnAround.ma
-//Last modified: Mon, Mar 09, 2026 09:42:20 PM
+//Name: MiniServerTurnAround.ma
+//Last modified: Mon, Mar 09, 2026 09:41:28 PM
 //Codeset: 1252
+file -rdi 1 -ns "MiniServer" -rfn "MiniServerRN" -op "v=0;" -typ "mayaAscii"
+		 "D:/Git Repository/UVU-AGD-Strm-Repo/MayaProject//assets/Sci-Fi/Props/Tech/MiniServer.ma";
+file -r -ns "MiniServer" -dr 1 -rfn "MiniServerRN" -op "v=0;" -typ "mayaAscii" "D:/Git Repository/UVU-AGD-Strm-Repo/MayaProject//assets/Sci-Fi/Props/Tech/MiniServer.ma";
 requires maya "2025ff03";
+requires -nodeType "polyDisc" "modelingToolkit" "0.0.0.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
 		 -nodeType "aiAreaLight" -nodeType "aiImagerDenoiserOidn" "mtoa" "5.4.8.2";
 currentUnit -l centimeter -a degree -t film;
@@ -11,7 +15,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "C87C0855-4E2F-188D-45F6-D5AD53A10D1D";
+fileInfo "UUID" "06C80941-452D-F095-1CFA-53AAB5EEBD2E";
 createNode transform -s -n "persp";
 	rename -uid "09931983-4D12-26EA-F62F-C68A0E86A1FA";
 	setAttr ".v" no;
@@ -244,6 +248,20 @@ createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	setAttr -k off ".v";
 	setAttr ".sc" -type "float3" 0.22450699 0.37913796 0.461 ;
 	setAttr ".intensity" 0.10000000149011612;
+createNode transform -n "pDisc1";
+	rename -uid "DA6E35EB-43FD-2A26-4FB9-049D7B99A939";
+	setAttr ".t" -type "double3" -0.47939971089363098 10.641532726120492 -0.73624491691589355 ;
+	setAttr ".s" -type "double3" 9.8504091245437966 9.8504091245437966 9.8504091245437966 ;
+createNode mesh -n "pDiscShape1" -p "pDisc1";
+	rename -uid "427F149D-441F-6168-AF29-6F87367EC140";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "62B9B98F-41B8-6E9D-734F-3899BDCF9FBB";
 	setAttr -s 6 ".lnk";
@@ -370,7 +388,7 @@ createNode lambert -n "White";
 createNode shadingEngine -n "lambert2SG";
 	rename -uid "1A415C1A-4BF6-6491-31B2-52AE7C06FA07";
 	setAttr ".ihi" 0;
-	setAttr -s 2 ".dsm";
+	setAttr -s 3 ".dsm";
 	setAttr ".ro" yes;
 createNode materialInfo -n "materialInfo1";
 	rename -uid "0E592570-4A60-90CC-EDAB-D0846529C397";
@@ -401,6 +419,18 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].x" 31.428571701049805;
 	setAttr ".tgi[0].ni[3].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
+createNode reference -n "MiniServerRN";
+	rename -uid "BC9A4D5F-419C-B097-218D-45A8F902B966";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"MiniServerRN"
+		"MiniServerRN" 0
+		"MiniServerRN" 2
+		0 "|MiniServer:MiniServer" "|Spinny_Guy" "-s -r "
+		2 "|Spinny_Guy|MiniServer:MiniServer" "translate" " -type \"double3\" 0 -0.74776667490296234 0";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode polyDisc -n "polyDisc1";
+	rename -uid "7D9785CE-414C-D243-D678-2593E787C2E9";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -412,15 +442,20 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 4 ".st";
+	setAttr -s 6 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 7 ".s";
+	setAttr -s 11 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
+	setAttr -s 4 ".u";
 select -ne :defaultRenderingList1;
+	setAttr -s 2 ".r";
 select -ne :lightList1;
 	setAttr -s 4 ".l";
+select -ne :defaultTextureList1;
+	setAttr -s 12 ".tx";
 select -ne :standardSurface1;
 	setAttr ".bc" -type "float3" 0.40000001 0.40000001 0.40000001 ;
 	setAttr ".sr" 0.5;
@@ -464,6 +499,7 @@ connectAttr "Spinny_Guy_rotateY.o" "Spinny_Guy.ry";
 connectAttr "Spinny_Guy_rotateZ.o" "Spinny_Guy.rz";
 connectAttr "polyCylinder1.out" "TurnTableShape.i";
 connectAttr "polyCube1.out" "StandinShape.i";
+connectAttr "polyDisc1.output" "pDiscShape1.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert2SG.message" ":defaultLightSet.message";
@@ -483,6 +519,7 @@ connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "White.oc" "lambert2SG.ss";
 connectAttr "floorShape.iog" "lambert2SG.dsm" -na;
 connectAttr "TurnTableShape.iog" "lambert2SG.dsm" -na;
+connectAttr "pDiscShape1.iog" "lambert2SG.dsm" -na;
 connectAttr "lambert2SG.msg" "materialInfo1.sg";
 connectAttr "White.msg" "materialInfo1.m";
 connectAttr "Purple.oc" "lambert3SG.ss";
@@ -510,4 +547,4 @@ connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight3.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
-// End of TurnAround.ma
+// End of MiniServerTurnAround.ma
