@@ -1,6 +1,6 @@
 //Maya ASCII 2025ff03 scene
-//Name: TurnAround.ma
-//Last modified: Thu, Mar 26, 2026 08:57:36 PM
+//Name: FlooringTurnAround.ma
+//Last modified: Thu, Mar 26, 2026 09:42:40 PM
 //Codeset: 1252
 file -rdi 1 -ns "GratePaneling" -rfn "GratePanelingRN" -op "v=0;" -typ "mayaAscii"
 		 "D:/Git Repository/UVU-AGD-Strm-Repo/MayaProject//assets/Sci-Fi/Props/BuildingComponents/GratePaneling.ma";
@@ -16,7 +16,7 @@ fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202505300603-a12e894a3d";
 fileInfo "osv" "Windows 11 Pro v2009 (Build: 26200)";
-fileInfo "UUID" "71024121-4D12-ACB3-5B84-88A1D1FD919E";
+fileInfo "UUID" "7734D277-4C5D-46F9-3937-CFBA288AAACB";
 createNode transform -s -n "persp";
 	rename -uid "09931983-4D12-26EA-F62F-C68A0E86A1FA";
 	setAttr ".v" no;
@@ -281,8 +281,7 @@ createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	setAttr ".ai_translator" -type "string" "gaussian";
 createNode aiAOVDriver -s -n "defaultArnoldDriver";
 	rename -uid "AA04DD08-415E-49EE-BA76-F2983B166AE2";
-	setAttr ".ai_translator" -type "string" "png";
-	setAttr ".color_management" 1;
+	setAttr ".ai_translator" -type "string" "exr";
 createNode aiAOVDriver -s -n "defaultArnoldDisplayDriver";
 	rename -uid "0216AD03-47B5-1E13-D86A-ACBC7DF92802";
 	setAttr ".ai_translator" -type "string" "maya";
@@ -490,7 +489,7 @@ createNode animCurveTU -n "FloorGrate2_visibility";
 	setAttr -s 4 ".ktv[0:3]"  73 0 145 1 216 1 217 0;
 	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "CD1F17F3-430F-9575-51C7-6A9EA94C1DC9";
+	rename -uid "C1ED819C-4A48-4936-2405-7295E234D832";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -319.0476063698062 -711.36388277959122 ;
 	setAttr ".tgi[0].vh" -type "double2" 763.09520777255887 303.03056567196603 ;
@@ -508,8 +507,7 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].y" -145.71427917480469;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
 select -ne :time1;
-	setAttr ".o" 278;
-	setAttr ".unw" 278;
+	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -543,9 +541,9 @@ select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
 	setAttr ".outf" 51;
-	setAttr ".imfkey" -type "string" "png";
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".an" yes;
-	setAttr ".ef" 144;
+	setAttr ".ef" 288;
 	setAttr ".pff" yes;
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
@@ -626,4 +624,4 @@ connectAttr "aiAreaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiAreaLight3.iog" ":defaultLightSet.dsm" -na;
 connectAttr "aiSkyDomeLight1.iog" ":defaultLightSet.dsm" -na;
-// End of TurnAround.ma
+// End of FlooringTurnAround.ma
