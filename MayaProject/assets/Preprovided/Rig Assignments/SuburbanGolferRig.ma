@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: SuburbanGolferRig.ma
-//Last modified: Wed, Sep 30, 2026 06:56:56 PM
+//Last modified: Wed, Sep 30, 2026 07:58:39 PM
 //Codeset: 1252
 requires maya "2026";
 requires "stereoCamera" "10.0";
@@ -13,12 +13,12 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "3B4C89F1-4C84-E9A1-47C6-2998D51DB69F";
+fileInfo "UUID" "A2D443F4-4046-A611-3370-8DA63AB7635C";
 createNode transform -s -n "persp";
 	rename -uid "D09594E7-48F4-4DC1-544E-DD97A0494C62";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.1861046867045384 6.4655530982510392 0.37252823515252476 ;
-	setAttr ".r" -type "double3" -28.538352645880877 314.20000000205437 0 ;
+	setAttr ".t" -type "double3" 3.3797438342657626 8.3377569831655958 2.3676088620927995 ;
+	setAttr ".r" -type "double3" -39.938352645973964 381.40000000176576 8.5401826273848866e-16 ;
 	setAttr ".rp" -type "double3" 5.6843418860808016e-16 0 0 ;
 	setAttr ".rpt" -type "double3" -2.7552953935009719e-16 -9.5689801323097941e-17 1.5721091013981333e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -28,7 +28,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.01;
 	setAttr ".fcp" 100;
 	setAttr ".fd" 0.05;
-	setAttr ".coi" 0.982240394060785;
+	setAttr ".coi" 4.007789254374833;
 	setAttr ".ow" 0.1;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -82735,7 +82735,7 @@ createNode joint -n "L_Arm_03_RK_Jnt" -p "L_Arm_02_RK_Jnt";
 	setAttr -cb on ".joz";
 	setAttr ".ssc" no;
 	setAttr ".radi" 15;
-createNode joint -n "L_Hand_Jnt" -p "L_Arm_03_RK_Jnt";
+createNode joint -n "L_Hand_FK_Jnt" -p "L_Arm_03_RK_Jnt";
 	rename -uid "1FD1DD0F-4873-D89A-BEA3-3BAD6705DB3F";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -82747,7 +82747,7 @@ createNode joint -n "L_Hand_Jnt" -p "L_Arm_03_RK_Jnt";
 	setAttr -cb on ".joz";
 	setAttr ".ssc" no;
 	setAttr ".radi" 12;
-createNode joint -n "L_Finger_03_Knucke_01_FK_Jnt" -p "L_Hand_Jnt";
+createNode joint -n "L_Finger_03_Knucke_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	rename -uid "48EADD2C-46D9-F4C6-A77D-EF9BA189B762";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -82978,7 +82978,7 @@ createNode scaleConstraint -n "L_Finger_03_Knucke_01_FK_Jnt_scaleConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 0.99999999999999978 0.99999999999999978 ;
 	setAttr -k on ".w0";
-createNode joint -n "L_Finger_04_Knucke_01_FK_Jnt" -p "L_Hand_Jnt";
+createNode joint -n "L_Finger_04_Knucke_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	rename -uid "75F446D9-4B4A-A15C-4A8E-5C9D9BE1A82C";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -83206,7 +83206,7 @@ createNode scaleConstraint -n "L_Finger_04_Knucke_01_FK_Jnt_scaleConstraint1" -p
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode joint -n "L_Finger_02_Knucke_01_FK_Jnt" -p "L_Hand_Jnt";
+createNode joint -n "L_Finger_02_Knucke_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	rename -uid "0BB9414B-478F-987C-2553-368D83487A63";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -83439,7 +83439,7 @@ createNode scaleConstraint -n "L_Finger_02_Knucke_01_FK_Jnt_scaleConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode joint -n "L_Finger_05_Knucke_01_FK_Jnt" -p "L_Hand_Jnt";
+createNode joint -n "L_Finger_05_Knucke_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	rename -uid "5829811D-4CB0-CDAE-B108-54902FCD7884";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -83674,7 +83674,7 @@ createNode scaleConstraint -n "L_Finger_05_Knucke_01_FK_Jnt_scaleConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000004 1.0000000000000002 ;
 	setAttr -k on ".w0";
-createNode joint -n "L_Finger_01_Knucke_01_FK_Jnt" -p "L_Hand_Jnt";
+createNode joint -n "L_Finger_01_Knucke_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	rename -uid "4BF6EF49-4ED1-1AF3-6D95-A184E4832080";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -83887,7 +83887,7 @@ createNode scaleConstraint -n "L_Finger_01_Knucke_01_FK_Jnt_scaleConstraint1" -p
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 0.99999999999999978 0.99999999999999989 0.99999999999999989 ;
 	setAttr -k on ".w0";
-createNode parentConstraint -n "L_Hand_Jnt_parentConstraint1" -p "L_Hand_Jnt";
+createNode parentConstraint -n "L_Hand_Jnt_parentConstraint1" -p "L_Hand_FK_Jnt";
 	rename -uid "E0598CC5-4232-89F6-21CB-888D736C93C9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Hand_CtrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -83907,7 +83907,7 @@ createNode parentConstraint -n "L_Hand_Jnt_parentConstraint1" -p "L_Hand_Jnt";
 	setAttr ".rst" -type "double3" 1.1368683772161603e-15 7.105427357601002e-17 0 ;
 	setAttr ".int" 2;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Hand_Jnt_scaleConstraint1" -p "L_Hand_Jnt";
+createNode scaleConstraint -n "L_Hand_Jnt_scaleConstraint1" -p "L_Hand_FK_Jnt";
 	rename -uid "E6DB9661-41D7-05B8-4636-2E9FC1E31CB4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Hand_CtrlW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -88112,15 +88112,109 @@ createNode parentConstraint -n "L_Arm_IK_Dist_01_Loc_parentConstraint1" -p "L_Ar
 	setAttr ".tg[0].tot" -type "double3" 0 0 -1.9073486328125e-08 ;
 	setAttr ".rst" -type "double3" 0.79099998474121092 6.0976947021484378 -0.26077945709228517 ;
 	setAttr -k on ".w0";
-createNode transform -n "L_Forearm_Twist_Aim_Loc";
-	rename -uid "E82A1095-4BA8-0170-AC66-A9919F98A46B";
-	setAttr ".t" -type "double3" 2.9288193858987048 5.9724274935238055 -0.24342699182701893 ;
-	setAttr ".r" -type "double3" 89.707054074816782 -4.8184981278564578 -3.3312140475866783 ;
+createNode transform -n "L_Forearm_Twist_Aim_Loc_Grp";
+	rename -uid "6369C07F-40CA-D443-4940-3784EC99DA8C";
 	setAttr ".s" -type "double3" 1 1.0000000000000002 0.99999999999999978 ;
+createNode transform -n "L_Forearm_Twist_Aim_Loc" -p "L_Forearm_Twist_Aim_Loc_Grp";
+	rename -uid "E82A1095-4BA8-0170-AC66-A9919F98A46B";
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
 createNode locator -n "L_Forearm_Twist_Aim_LocShape" -p "L_Forearm_Twist_Aim_Loc";
 	rename -uid "035276D4-45ED-4F4E-8F98-3D925092EED0";
 	setAttr -k off ".v";
-	setAttr ".los" -type "double3" 0.002 0.002 0.002 ;
+	setAttr ".los" -type "double3" 0.001 0.001 0.001 ;
+createNode aimConstraint -n "L_Forearm_Twist_Aim_Loc_aimConstraint1" -p "L_Forearm_Twist_Aim_Loc";
+	rename -uid "DA219E10-4FDB-E48C-BBD9-D1A2DF75044B";
+	addAttr -dcb 0 -ci true -sn "w0" -ln "L_Forearm_Twist_Target_LocW0" -dv 1 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".a" -type "double3" -1 0 0 ;
+	setAttr ".wut" 1;
+	setAttr -k on ".w0";
+createNode pointConstraint -n "L_Forearm_Twist_Aim_Loc_pointConstraint1" -p "L_Forearm_Twist_Aim_Loc";
+	rename -uid "0DEAD14C-4546-D52C-1180-CDA4ACCE332E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Hand_FK_JntW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".o" -type "double3" 0 4.263256414560601e-16 2.2737367544323206e-15 ;
+	setAttr ".rst" -type "double3" 0 0 -1.1368683772161603e-15 ;
+	setAttr -k on ".w0";
+createNode transform -n "L_Forearm_Twist_Target_Loc" -p "L_Forearm_Twist_Aim_Loc_Grp";
+	rename -uid "4D820913-4687-7CE9-C600-B3B52EAE0DC4";
+	setAttr ".t" -type "double3" -1.1925123859621243 0 0 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
+createNode locator -n "L_Forearm_Twist_Target_LocShape" -p "L_Forearm_Twist_Target_Loc";
+	rename -uid "6EC9A31E-4EDD-6DC5-3FE2-C3A7EC31CD27";
+	setAttr -k off ".v";
+	setAttr ".los" -type "double3" 0.001 0.001 0.001 ;
+createNode transform -n "L_Forearm_Twist_Up_Loc" -p "L_Forearm_Twist_Aim_Loc_Grp";
+	rename -uid "397AA145-46C1-CA47-AD1A-1388BDE3530D";
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
+createNode locator -n "L_Forearm_Twist_Up_LocShape" -p "L_Forearm_Twist_Up_Loc";
+	rename -uid "EFD1668B-4E71-9904-7D98-109B17EE0583";
+	setAttr -k off ".v";
+	setAttr ".los" -type "double3" 0.001 0.001 0.001 ;
+createNode parentConstraint -n "L_Forearm_Twist_Up_Loc_parentConstraint1" -p "L_Forearm_Twist_Up_Loc";
+	rename -uid "C7E776A4-4A78-10F1-E240-0EA32E6AA7F1";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Hand_FK_JntW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -1.4210854715202005e-15 0.30000000000000021 
+		-2.2737367544323206e-15 ;
+	setAttr ".rst" -type "double3" -1.9895196601282807e-15 0.3 -4.5474735088646413e-15 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1" -p
+		 "L_Forearm_Twist_Aim_Loc_Grp";
+	rename -uid "9394FC6B-42E1-0F51-2969-46A191BD6FDA";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Arm_02_RK_JntW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 1.1925123929977455 1.4210854715202005e-15 6.8212102632969615e-15 ;
+	setAttr ".tg[0].tor" -type "double3" 5.1684013573782151e-15 -3.3513852551749361e-15 
+		-1.7835552746664706e-06 ;
+	setAttr ".lr" -type "double3" 89.707054074816767 -4.8184981278564578 -3.3312140475866765 ;
+	setAttr ".rst" -type "double3" 2.9288193858987053 5.9724274935238055 -0.2434269918270188 ;
+	setAttr ".rsrr" -type "double3" 89.707054074816767 -4.8184981278564578 -3.3312140475866765 ;
+	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "6E8C5124-4521-FBC1-8CF8-26B88D61287E";
 	setAttr -s 5 ".lnk";
@@ -97039,17 +97133,17 @@ connectAttr "L_Arm_03_RK_Jnt_scaleConstraint1.csx" "L_Arm_03_RK_Jnt.sx";
 connectAttr "L_Arm_03_RK_Jnt_scaleConstraint1.csy" "L_Arm_03_RK_Jnt.sy";
 connectAttr "L_Arm_03_RK_Jnt_scaleConstraint1.csz" "L_Arm_03_RK_Jnt.sz";
 connectAttr "L_Arm_02_RK_Jnt.s" "L_Arm_03_RK_Jnt.is";
-connectAttr "L_Hand_Jnt_parentConstraint1.ctx" "L_Hand_Jnt.tx";
-connectAttr "L_Hand_Jnt_parentConstraint1.cty" "L_Hand_Jnt.ty";
-connectAttr "L_Hand_Jnt_parentConstraint1.ctz" "L_Hand_Jnt.tz";
-connectAttr "L_Hand_Jnt_scaleConstraint1.csx" "L_Hand_Jnt.sx";
-connectAttr "L_Hand_Jnt_scaleConstraint1.csy" "L_Hand_Jnt.sy";
-connectAttr "L_Hand_Jnt_scaleConstraint1.csz" "L_Hand_Jnt.sz";
-connectAttr "L_Hand_Jnt_parentConstraint1.crx" "L_Hand_Jnt.rx";
-connectAttr "L_Hand_Jnt_parentConstraint1.cry" "L_Hand_Jnt.ry";
-connectAttr "L_Hand_Jnt_parentConstraint1.crz" "L_Hand_Jnt.rz";
-connectAttr "L_Arm_03_RK_Jnt.s" "L_Hand_Jnt.is";
-connectAttr "L_Hand_Jnt.s" "L_Finger_03_Knucke_01_FK_Jnt.is";
+connectAttr "L_Hand_Jnt_parentConstraint1.ctx" "L_Hand_FK_Jnt.tx";
+connectAttr "L_Hand_Jnt_parentConstraint1.cty" "L_Hand_FK_Jnt.ty";
+connectAttr "L_Hand_Jnt_parentConstraint1.ctz" "L_Hand_FK_Jnt.tz";
+connectAttr "L_Hand_Jnt_scaleConstraint1.csx" "L_Hand_FK_Jnt.sx";
+connectAttr "L_Hand_Jnt_scaleConstraint1.csy" "L_Hand_FK_Jnt.sy";
+connectAttr "L_Hand_Jnt_scaleConstraint1.csz" "L_Hand_FK_Jnt.sz";
+connectAttr "L_Hand_Jnt_parentConstraint1.crx" "L_Hand_FK_Jnt.rx";
+connectAttr "L_Hand_Jnt_parentConstraint1.cry" "L_Hand_FK_Jnt.ry";
+connectAttr "L_Hand_Jnt_parentConstraint1.crz" "L_Hand_FK_Jnt.rz";
+connectAttr "L_Arm_03_RK_Jnt.s" "L_Hand_FK_Jnt.is";
+connectAttr "L_Hand_FK_Jnt.s" "L_Finger_03_Knucke_01_FK_Jnt.is";
 connectAttr "L_Finger_03_Knucke_01_FK_Jnt_scaleConstraint1.csx" "L_Finger_03_Knucke_01_FK_Jnt.sx"
 		;
 connectAttr "L_Finger_03_Knucke_01_FK_Jnt_scaleConstraint1.csy" "L_Finger_03_Knucke_01_FK_Jnt.sy"
@@ -97269,7 +97363,7 @@ connectAttr "L_Finger_03_Knucke_01_FK_Ctrl.pm" "L_Finger_03_Knucke_01_FK_Jnt_sca
 		;
 connectAttr "L_Finger_03_Knucke_01_FK_Jnt_scaleConstraint1.w0" "L_Finger_03_Knucke_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.s" "L_Finger_04_Knucke_01_FK_Jnt.is";
+connectAttr "L_Hand_FK_Jnt.s" "L_Finger_04_Knucke_01_FK_Jnt.is";
 connectAttr "L_Finger_04_Knucke_01_FK_Jnt_scaleConstraint1.csx" "L_Finger_04_Knucke_01_FK_Jnt.sx"
 		;
 connectAttr "L_Finger_04_Knucke_01_FK_Jnt_scaleConstraint1.csy" "L_Finger_04_Knucke_01_FK_Jnt.sy"
@@ -97489,7 +97583,7 @@ connectAttr "L_Finger_04_Knucke_01_FK_Ctrl.pm" "L_Finger_04_Knucke_01_FK_Jnt_sca
 		;
 connectAttr "L_Finger_04_Knucke_01_FK_Jnt_scaleConstraint1.w0" "L_Finger_04_Knucke_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.s" "L_Finger_02_Knucke_01_FK_Jnt.is";
+connectAttr "L_Hand_FK_Jnt.s" "L_Finger_02_Knucke_01_FK_Jnt.is";
 connectAttr "L_Finger_02_Knucke_01_FK_Jnt_scaleConstraint1.csx" "L_Finger_02_Knucke_01_FK_Jnt.sx"
 		;
 connectAttr "L_Finger_02_Knucke_01_FK_Jnt_scaleConstraint1.csy" "L_Finger_02_Knucke_01_FK_Jnt.sy"
@@ -97709,7 +97803,7 @@ connectAttr "L_Finger_02_Knucke_01_FK_Ctrl.pm" "L_Finger_02_Knucke_01_FK_Jnt_sca
 		;
 connectAttr "L_Finger_02_Knucke_01_FK_Jnt_scaleConstraint1.w0" "L_Finger_02_Knucke_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.s" "L_Finger_05_Knucke_01_FK_Jnt.is";
+connectAttr "L_Hand_FK_Jnt.s" "L_Finger_05_Knucke_01_FK_Jnt.is";
 connectAttr "L_Finger_05_Knucke_01_FK_Jnt_scaleConstraint1.csx" "L_Finger_05_Knucke_01_FK_Jnt.sx"
 		;
 connectAttr "L_Finger_05_Knucke_01_FK_Jnt_scaleConstraint1.csy" "L_Finger_05_Knucke_01_FK_Jnt.sy"
@@ -97929,7 +98023,7 @@ connectAttr "L_Finger_05_Knucke_01_FK_Ctrl.pm" "L_Finger_05_Knucke_01_FK_Jnt_sca
 		;
 connectAttr "L_Finger_05_Knucke_01_FK_Jnt_scaleConstraint1.w0" "L_Finger_05_Knucke_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.s" "L_Finger_01_Knucke_01_FK_Jnt.is";
+connectAttr "L_Hand_FK_Jnt.s" "L_Finger_01_Knucke_01_FK_Jnt.is";
 connectAttr "L_Finger_01_Knucke_01_FK_Jnt_scaleConstraint1.csx" "L_Finger_01_Knucke_01_FK_Jnt.sx"
 		;
 connectAttr "L_Finger_01_Knucke_01_FK_Jnt_scaleConstraint1.csy" "L_Finger_01_Knucke_01_FK_Jnt.sy"
@@ -98149,11 +98243,11 @@ connectAttr "L_Finger_01_Knucke_01_FK_Ctrl.pm" "L_Finger_01_Knucke_01_FK_Jnt_sca
 		;
 connectAttr "L_Finger_01_Knucke_01_FK_Jnt_scaleConstraint1.w0" "L_Finger_01_Knucke_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.ro" "L_Hand_Jnt_parentConstraint1.cro";
-connectAttr "L_Hand_Jnt.pim" "L_Hand_Jnt_parentConstraint1.cpim";
-connectAttr "L_Hand_Jnt.rp" "L_Hand_Jnt_parentConstraint1.crp";
-connectAttr "L_Hand_Jnt.rpt" "L_Hand_Jnt_parentConstraint1.crt";
-connectAttr "L_Hand_Jnt.jo" "L_Hand_Jnt_parentConstraint1.cjo";
+connectAttr "L_Hand_FK_Jnt.ro" "L_Hand_Jnt_parentConstraint1.cro";
+connectAttr "L_Hand_FK_Jnt.pim" "L_Hand_Jnt_parentConstraint1.cpim";
+connectAttr "L_Hand_FK_Jnt.rp" "L_Hand_Jnt_parentConstraint1.crp";
+connectAttr "L_Hand_FK_Jnt.rpt" "L_Hand_Jnt_parentConstraint1.crt";
+connectAttr "L_Hand_FK_Jnt.jo" "L_Hand_Jnt_parentConstraint1.cjo";
 connectAttr "L_Hand_Ctrl.t" "L_Hand_Jnt_parentConstraint1.tg[0].tt";
 connectAttr "L_Hand_Ctrl.rp" "L_Hand_Jnt_parentConstraint1.tg[0].trp";
 connectAttr "L_Hand_Ctrl.rpt" "L_Hand_Jnt_parentConstraint1.tg[0].trt";
@@ -98163,8 +98257,8 @@ connectAttr "L_Hand_Ctrl.s" "L_Hand_Jnt_parentConstraint1.tg[0].ts";
 connectAttr "L_Hand_Ctrl.pm" "L_Hand_Jnt_parentConstraint1.tg[0].tpm";
 connectAttr "L_Hand_Jnt_parentConstraint1.w0" "L_Hand_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "L_Hand_Jnt.ssc" "L_Hand_Jnt_scaleConstraint1.tsc";
-connectAttr "L_Hand_Jnt.pim" "L_Hand_Jnt_scaleConstraint1.cpim";
+connectAttr "L_Hand_FK_Jnt.ssc" "L_Hand_Jnt_scaleConstraint1.tsc";
+connectAttr "L_Hand_FK_Jnt.pim" "L_Hand_Jnt_scaleConstraint1.cpim";
 connectAttr "L_Hand_Ctrl.s" "L_Hand_Jnt_scaleConstraint1.tg[0].ts";
 connectAttr "L_Hand_Ctrl.pm" "L_Hand_Jnt_scaleConstraint1.tg[0].tpm";
 connectAttr "L_Hand_Jnt_scaleConstraint1.w0" "L_Hand_Jnt_scaleConstraint1.tg[0].tw"
@@ -101556,6 +101650,140 @@ connectAttr "L_Arm_IK_Base_Ctrl.pm" "L_Arm_IK_Dist_01_Loc_parentConstraint1.tg[0
 		;
 connectAttr "L_Arm_IK_Dist_01_Loc_parentConstraint1.w0" "L_Arm_IK_Dist_01_Loc_parentConstraint1.tg[0].tw"
 		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.ctx" "L_Forearm_Twist_Aim_Loc_Grp.tx"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.cty" "L_Forearm_Twist_Aim_Loc_Grp.ty"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.ctz" "L_Forearm_Twist_Aim_Loc_Grp.tz"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.crx" "L_Forearm_Twist_Aim_Loc_Grp.rx"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.cry" "L_Forearm_Twist_Aim_Loc_Grp.ry"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.crz" "L_Forearm_Twist_Aim_Loc_Grp.rz"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_aimConstraint1.crx" "L_Forearm_Twist_Aim_Loc.rx"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_aimConstraint1.cry" "L_Forearm_Twist_Aim_Loc.ry"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_aimConstraint1.crz" "L_Forearm_Twist_Aim_Loc.rz"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_pointConstraint1.ctx" "L_Forearm_Twist_Aim_Loc.tx"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_pointConstraint1.cty" "L_Forearm_Twist_Aim_Loc.ty"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_pointConstraint1.ctz" "L_Forearm_Twist_Aim_Loc.tz"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.pim" "L_Forearm_Twist_Aim_Loc_aimConstraint1.cpim"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.t" "L_Forearm_Twist_Aim_Loc_aimConstraint1.ct"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.rp" "L_Forearm_Twist_Aim_Loc_aimConstraint1.crp"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.rpt" "L_Forearm_Twist_Aim_Loc_aimConstraint1.crt"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.ro" "L_Forearm_Twist_Aim_Loc_aimConstraint1.cro"
+		;
+connectAttr "L_Forearm_Twist_Target_Loc.t" "L_Forearm_Twist_Aim_Loc_aimConstraint1.tg[0].tt"
+		;
+connectAttr "L_Forearm_Twist_Target_Loc.rp" "L_Forearm_Twist_Aim_Loc_aimConstraint1.tg[0].trp"
+		;
+connectAttr "L_Forearm_Twist_Target_Loc.rpt" "L_Forearm_Twist_Aim_Loc_aimConstraint1.tg[0].trt"
+		;
+connectAttr "L_Forearm_Twist_Target_Loc.pm" "L_Forearm_Twist_Aim_Loc_aimConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_aimConstraint1.w0" "L_Forearm_Twist_Aim_Loc_aimConstraint1.tg[0].tw"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc.wm" "L_Forearm_Twist_Aim_Loc_aimConstraint1.wum"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.pim" "L_Forearm_Twist_Aim_Loc_pointConstraint1.cpim"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.rp" "L_Forearm_Twist_Aim_Loc_pointConstraint1.crp"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc.rpt" "L_Forearm_Twist_Aim_Loc_pointConstraint1.crt"
+		;
+connectAttr "L_Hand_FK_Jnt.t" "L_Forearm_Twist_Aim_Loc_pointConstraint1.tg[0].tt"
+		;
+connectAttr "L_Hand_FK_Jnt.rp" "L_Forearm_Twist_Aim_Loc_pointConstraint1.tg[0].trp"
+		;
+connectAttr "L_Hand_FK_Jnt.rpt" "L_Forearm_Twist_Aim_Loc_pointConstraint1.tg[0].trt"
+		;
+connectAttr "L_Hand_FK_Jnt.pm" "L_Forearm_Twist_Aim_Loc_pointConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_pointConstraint1.w0" "L_Forearm_Twist_Aim_Loc_pointConstraint1.tg[0].tw"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.ctx" "L_Forearm_Twist_Up_Loc.tx"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.cty" "L_Forearm_Twist_Up_Loc.ty"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.ctz" "L_Forearm_Twist_Up_Loc.tz"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.crx" "L_Forearm_Twist_Up_Loc.rx"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.cry" "L_Forearm_Twist_Up_Loc.ry"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.crz" "L_Forearm_Twist_Up_Loc.rz"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc.ro" "L_Forearm_Twist_Up_Loc_parentConstraint1.cro"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc.pim" "L_Forearm_Twist_Up_Loc_parentConstraint1.cpim"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc.rp" "L_Forearm_Twist_Up_Loc_parentConstraint1.crp"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc.rpt" "L_Forearm_Twist_Up_Loc_parentConstraint1.crt"
+		;
+connectAttr "L_Hand_FK_Jnt.t" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Hand_FK_Jnt.rp" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Hand_FK_Jnt.rpt" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Hand_FK_Jnt.r" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Hand_FK_Jnt.ro" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Hand_FK_Jnt.s" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Hand_FK_Jnt.pm" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Hand_FK_Jnt.jo" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Hand_FK_Jnt.ssc" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Hand_FK_Jnt.is" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Forearm_Twist_Up_Loc_parentConstraint1.w0" "L_Forearm_Twist_Up_Loc_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp.ro" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.cro"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp.pim" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.cpim"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp.rp" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.crp"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp.rpt" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.crt"
+		;
+connectAttr "L_Arm_02_RK_Jnt.t" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Arm_02_RK_Jnt.rp" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Arm_02_RK_Jnt.rpt" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Arm_02_RK_Jnt.r" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Arm_02_RK_Jnt.ro" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Arm_02_RK_Jnt.s" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Arm_02_RK_Jnt.pm" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Arm_02_RK_Jnt.jo" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Arm_02_RK_Jnt.ssc" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Arm_02_RK_Jnt.is" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.w0" "L_Forearm_Twist_Aim_Loc_Grp_parentConstraint1.tg[0].tw"
+		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Pants_GeoSG.message" ":defaultLightSet.message";
@@ -102207,7 +102435,7 @@ connectAttr "R_Arm_FK_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[64].d
 		;
 connectAttr "L_Arm_IK_End_Ctrl_Grp_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[65].dn"
 		;
-connectAttr "L_Hand_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[66].dn";
+connectAttr "L_Hand_FK_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[66].dn";
 connectAttr "effector3.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[67].dn";
 connectAttr "R_Arm_03_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[68].dn"
 		;
