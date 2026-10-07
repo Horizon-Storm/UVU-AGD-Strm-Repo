@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: BarrelSquareFoodGrade.ma
-//Last modified: Tue, Oct 06, 2026 04:50:11 PM
+//Last modified: Tue, Oct 06, 2026 05:36:21 PM
 //Codeset: 1252
 requires maya "2026";
 requires "mtoa" "5.5.4.2";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "6D51705B-4EE4-384F-CE0E-69942D5C4231";
+fileInfo "UUID" "DF152CD2-49B1-61C5-A9E7-6ABE863222A3";
 createNode transform -s -n "persp";
 	rename -uid "4CAC81C4-4A72-BEB1-06C3-78B8AE3B1611";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.2608496440337298 2.979796459504104 3.6908154516378247 ;
+	setAttr ".t" -type "double3" 2.3344583152565757 3.7281229702142484 3.9617731596360923 ;
 	setAttr ".r" -type "double3" 333.86164724510246 -1778.9999999999361 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3D95AC2D-41CD-8E6A-FE4C-38A92756F223";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 18.097434220095717;
-	setAttr ".coi" 5.4790235089061099;
+	setAttr ".coi" 6.0594639418071363;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
